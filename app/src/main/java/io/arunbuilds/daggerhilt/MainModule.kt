@@ -17,6 +17,7 @@ object MainModule {
     @Provides
     @Named("String2")
     fun provideTestString2(
-        @ApplicationContext app: Context
-    ) = app.getString(R.string.string_to_inject)
+        @ApplicationContext app: Context,
+        @Named("String1") testString1 : String
+    ) = app.getString(R.string.string_to_inject) + " " +testString1
 }
